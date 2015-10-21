@@ -133,6 +133,7 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:imgRect];
         imageView.backgroundColor = [UIColor clearColor];
         imageView.contentMode = [_datasource contentModeForImageIndex:i];
+		imageView.clipsToBounds = YES;
         
         id imageSource = [_datasourceImages objectAtIndex:i];
         if ([imageSource isKindOfClass:[UIImage class]]) {
