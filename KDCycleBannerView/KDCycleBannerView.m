@@ -15,7 +15,6 @@
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (assign, nonatomic) BOOL scrollViewBounces;
 
-@property (strong, nonatomic) UIPageControl *pageControl;
 
 @property (strong, nonatomic) NSArray *datasourceImages;
 @property (assign, nonatomic) NSUInteger currentSelectedPage;
@@ -94,6 +93,7 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
     _pageControl = [[UIPageControl alloc] initWithFrame:pageControlFrame];
     _pageControl.center = CGPointMake(CGRectGetWidth(_scrollView.frame)*0.5, CGRectGetHeight(_scrollView.frame) - 12.);
     _pageControl.userInteractionEnabled = NO;
+	_pageControl.hidden = YES;
     [self addSubview:_pageControl];
 }
 
