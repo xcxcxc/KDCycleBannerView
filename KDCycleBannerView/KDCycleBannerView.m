@@ -27,12 +27,21 @@
 
 static void *kContentImageViewObservationContext = &kContentImageViewObservationContext;
 
+- (instancetype)init {
+	if (self = [super init]) {
+		_scrollViewBounces = YES;
+		_autoPlayTimeInterval = 3.0;
+	}
+	return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         _scrollViewBounces = YES;
+		_autoPlayTimeInterval = 3.0;
     }
     return self;
 }
@@ -40,6 +49,7 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         _scrollViewBounces = YES;
+		_autoPlayTimeInterval = 3.0;
     }
     return self;
 }
@@ -93,7 +103,6 @@ static void *kContentImageViewObservationContext = &kContentImageViewObservation
     _pageControl = [[UIPageControl alloc] initWithFrame:pageControlFrame];
     _pageControl.center = CGPointMake(CGRectGetWidth(_scrollView.frame)*0.5, CGRectGetHeight(_scrollView.frame) - 12.);
     _pageControl.userInteractionEnabled = NO;
-	_pageControl.hidden = YES;
     [self addSubview:_pageControl];
 }
 
